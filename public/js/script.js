@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
       )  
       
     //Get info about visitor Country and statistics
-      let GetCountryAPI = 'https://praise-click.herokuapp.com/api/country/BE'; 
+      let GetCountryAPI = 'https://praise-click.herokuapp.com/api/country/' + sessionStorage.getItem('country'); 
       fetch(GetCountryAPI)
       .then((response) => response.json())
       .then((data) => {
