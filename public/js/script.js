@@ -15,7 +15,8 @@ window.addEventListener('load', () => {
       
       )  
       
-    //Get info about visitor Country and statistics
+      setInterval(() => {
+        //Get info about visitor Country and statistics
       let GetCountryAPI = 'https://praise-click.herokuapp.com/api/country/' + sessionStorage.getItem('country'); 
       fetch(GetCountryAPI)
       .then((response) => response.json())
@@ -40,6 +41,9 @@ window.addEventListener('load', () => {
         });
         document.getElementById('top').innerText = top[0].country_clicks + " : " + top[0].country_name;
     });
+      }, 1000);
+
+
       //Start for new visitor
       let StartAPI = 'https://praise-click.herokuapp.com/api/start';
                   fetch(StartAPI,
